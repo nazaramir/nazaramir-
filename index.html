@@ -1,0 +1,73 @@
+                </div>
+               
+            
+		<div class="row">
+		<table border=0 cellpadding=5 cellspacing=0>
+            
+            
+            
+            <tr>
+                <td><label>Tanggal</label></td>
+				<td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+				<td><input class="form-control" type="text" name="tanggal" id="myDate" size="80" disabled></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+            
+			<tr>
+				<td><label>Nama</label></td>
+				<td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+				<td><input class="form-control" type="text" id="nama" name="tanggal" placeholder="Nama Pembeli" size="80" ></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+            
+            
+			<tr>
+				<td><label>Alamat</label></td>
+				<td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+				<td><input class="form-control" type="text" id="alamat" name="tanggal" placeholder="Alamat Pembeli" size="80"></td>
+			</tr>
+			<tr>
+			<td>&nbsp;</td>
+			</tr>
+            
+            
+		</table>
+
+		<a  onclick="cetakData()" data-toggle="modal" data-target="#kasirCetak" class="btn btn-info" role="button">Cetak</a>
+        printDocument.close();
+
+    }
+    window.openPP = openPP;
+    </script>
+<script>
+  function cetakData(){
+    document.getElementById("tanggalCetak").innerHTML = document.getElementById("myDate").value;
+    document.getElementById("namaCetak").innerHTML = document.getElementById("nama").value;    
+    document.getElementById("alamatCetak").innerHTML = document.getElementById("alamat").value;
+}
+</script>
+
+
+  <script type="text/javascript">
+  function SetDate()
+  {
+  var date = new Date();
+  var day = date.getDate();
+  var month = date.getMonth() + 1;
+  var year = date.getFullYear();
+
+  if (month < 10) month = "0" + month;
+  if (day < 10) day = "0" + day;
+
+  var today = day + "-" + month + "-" + year;
+
+
+  document.getElementById('myDate').value = today;
+  }
+  </script>
+</body>
+</html>
