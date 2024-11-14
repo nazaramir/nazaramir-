@@ -1,100 +1,69 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kasir App - GitHub</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Restoran</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <div class="welcome-box">
-      <h1>Selamat Datang di Kasir App</h1>
-      <p>Solusi mudah untuk transaksi cepat dan tepat</p>
-      <button id="get-started-btn">Mulai</button>
-    </div>
-    <div class="clouds"></div>
-  </div>
+    <header>
+        <h1>Menu Restoran</h1>
+    </header>
+    
+    <div class="menu-container">
+        <div class="menu-section" id="food-menu">
+            <h2>Makanan</h2>
+            <ul>
+                <li>
+                    <span class="item-name">Nasi Goreng</span>
+                    <span class="item-price">Rp 25.000</span>
+                    <button class="add-to-cart" onclick="addToCart('Nasi Goreng', 25000)">Tambah</button>
+                </li>
+                <li>
+                    <span class="item-name">Mie Ayam</span>
+                    <span class="item-price">Rp 20.000</span>
+                    <button class="add-to-cart" onclick="addToCart('Mie Ayam', 20000)">Tambah</button>
+                </li>
+                <li>
+                    <span class="item-name">Sate Ayam</span>
+                    <span class="item-price">Rp 30.000</span>
+                    <button class="add-to-cart" onclick="addToCart('Sate Ayam', 30000)">Tambah</button>
+                </li>
+            </ul>
+        </div>
 
-  <script src="script.js"></script>
+        <div class="menu-section" id="drink-menu">
+            <h2>Minuman</h2>
+            <ul>
+                <li>
+                    <span class="item-name">Es Teh</span>
+                    <span class="item-price">Rp 10.000</span>
+                    <button class="add-to-cart" onclick="addToCart('Es Teh', 10000)">Tambah</button>
+                </li>
+                <li>
+                    <span class="item-name">Jus Jeruk</span>
+                    <span class="item-price">Rp 15.000</span>
+                    <button class="add-to-cart" onclick="addToCart('Jus Jeruk', 15000)">Tambah</button>
+                </li>
+                <li>
+                    <span class="item-name">Air Mineral</span>
+                    <span class="item-price">Rp 5.000</span>
+                    <button class="add-to-cart" onclick="addToCart('Air Mineral', 5000)">Tambah</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="cart">
+        <h3>Keranjang</h3>
+        <ul id="cart-list">
+            <!-- Daftar item yang dipilih akan muncul di sini -->
+        </ul>
+        <p id="total-price">Total: Rp 0</p>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body, html {
-  height: 100%;
-  font-family: Arial, sans-serif;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  background-color: #f0f8ff;
-  position: relative;
-  overflow: hidden;
-}
-
-.welcome-box {
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  position: relative;
-  z-index: 10;
-}
-
-h1 {
-  font-size: 2.5rem;
-  color: #333;
-}
-
-p {
-  font-size: 1.2rem;
-  margin: 20px 0;
-  color: #555;
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 1rem;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-.clouds {
-  position: absolute;
-  top: -50px;
-  left: -200px;
-  width: 500px;
-  height: 500px;
-  background-image: url('https://www.transparenttextures.com/patterns/clouds.png');
-  opacity: 0.2;
-  animation: moveClouds 60s linear infinite;
-}
-
-@keyframes moveClouds {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(1500px);
-  }
-}
-document.getElementById('get-started-btn').addEventListener('click', function() {
-  alert("Selamat datang! Kamu siap untuk memulai transaksi.");
-});
