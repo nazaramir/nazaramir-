@@ -1,94 +1,100 @@
-                </div>
-               
-            
-		<div class="row">
-		<table border=0 cellpadding=5 cellspacing=0>
-            
-            
-            
-            <tr>
-                <td><label>Tanggal</label></td>
-				<td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
-				<td><input class="form-control" type="text" name="tanggal" id="myDate" size="80" disabled></td>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
-			</tr>
-            
-			<tr>
-				<td><label>Nama</label></td>
-				<td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
-				<td><input class="form-control" type="text" id="nama" name="tanggal" placeholder="Nama Pembeli" size="80" ></td>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
-			</tr>
-            
-            
-			<tr>
-				<td><label>Alamat</label></td>
-				<td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
-				<td><input class="form-control" type="text" id="alamat" name="tanggal" placeholder="Alamat Pembeli" size="80"></td>
-			</tr>
-			<tr>
-			<td>&nbsp;</td>
-			</tr>
-            
-            
-		</table>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kasir App - GitHub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="welcome-box">
+      <h1>Selamat Datang di Kasir App</h1>
+      <p>Solusi mudah untuk transaksi cepat dan tepat</p>
+      <button id="get-started-btn">Mulai</button>
+    </div>
+    <div class="clouds"></div>
+  </div>
 
-    }
-    window.openPP = openPP;
-    </script>
-<script>
-  function cetakData(){
-    document.getElementById("tanggalCetak").innerHTML = document.getElementById("myDate").value;
-    document.getElementById("namaCetak").innerHTML = document.getElementById("nama").value;    
-    document.getElementById("alamatCetak").innerHTML = document.getElementById("alamat").value;
-}
-</script>
-
-
-  <script type="text/javascript">
-  function SetDate()
-  {
-  var date = new Date();
-  var day = date.getDate();
-  var month = date.getMonth() + 1;
-  var year = date.getFullYear();
-
-  if (month < 10) month = "0" + month;
-  if (day < 10) day = "0" + day;
-
-  var today = day + "-" + month + "-" + year;
-
-
-  document.getElementById('myDate').value = today;
-  }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
-<p class = flavor >French Vanilla</p>
-            <p>3.00</p>
-          </article>
-          <article>
-            <p>Caramel Macchiato</p>
-            <p>3.75</p>
-          </article>
-          <article>
-            <p>Pumpkin Spice</p>
-            <p>3.50</p>
-          </article>
-          <article>
-            <p>Hazelnut</p>
-            <p>4.00</p>
-          </article>
-          <article>
-            <p>Mocha</p>
-            <p>4.50</p>
-          </article>
-        </section>
-      </main>
-    </div>
-  </body>
-</html>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #f0f8ff;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-box {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+p {
+  font-size: 1.2rem;
+  margin: 20px 0;
+  color: #555;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.clouds {
+  position: absolute;
+  top: -50px;
+  left: -200px;
+  width: 500px;
+  height: 500px;
+  background-image: url('https://www.transparenttextures.com/patterns/clouds.png');
+  opacity: 0.2;
+  animation: moveClouds 60s linear infinite;
+}
+
+@keyframes moveClouds {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(1500px);
+  }
+}
+document.getElementById('get-started-btn').addEventListener('click', function() {
+  alert("Selamat datang! Kamu siap untuk memulai transaksi.");
+});
